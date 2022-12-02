@@ -8,10 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthorService {
 
-    @Autowired
-    AuthorRepository authorRepository;
-
     public void create(Author author){
-        authorRepository.save(author);
+
     }
 }

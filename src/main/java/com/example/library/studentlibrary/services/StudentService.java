@@ -11,32 +11,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService {
 
-    private static Logger logger = LoggerFactory.getLogger(StudentService.class);
-
-    @Autowired
-    CardService cardService;
-
-    @Autowired
-    StudentRepository studentRepository;
-
     public Student getDetailsByEmail(String email){
-        return studentRepository.findByEmailId(email);
+        Student student = null;
+
+        return student;
     }
 
     public Student getDetailsById(int id){
-        return studentRepository.findById(id).get();
+        Student student = null;
+
+        return student;
     }
 
     public void createStudent(Student student){
-        Card newCard = cardService.createAndReturn(student);
+
     }
 
     public void updateStudent(Student student){
-        studentRepository.updateStudentDetails(student);
+
     }
 
     public void deleteStudent(int id){
-        cardService.deactivateCard(id);
-        studentRepository.deleteCustom(id);
+        //Delete student and deactivate corresponding card
     }
 }
