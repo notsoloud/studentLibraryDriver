@@ -16,13 +16,13 @@ import java.util.concurrent.TimeUnit;
 public class TransactionService {
 
     @Autowired
-    BookRepository bookRepository;
+    BookRepository bookRepository5;
 
     @Autowired
-    CardRepository cardRepository;
+    CardRepository cardRepository5;
 
     @Autowired
-    TransactionRepository transactionRepository;
+    TransactionRepository transactionRepository5;
 
     @Value("${books.max_allowed}")
     int max_allowed_books;
@@ -51,7 +51,7 @@ public class TransactionService {
 
     public Transaction returnBook(int cardId, int bookId) throws Exception{
 
-        List<Transaction> transactions = transactionRepository.find(cardId, bookId,TransactionStatus.SUCCESSFUL, true);
+        List<Transaction> transactions = transactionRepository5.find(cardId, bookId,TransactionStatus.SUCCESSFUL, true);
         Transaction transaction = transactions.get(transactions.size() - 1);
 
         //for the given transaction calculate the fine amount considering the book has been returned exactly when this function is called

@@ -10,8 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CardService {
 
+
     @Autowired
-    CardRepository cardRepository;
+    CardRepository cardRepository3;
 
     public Card createAndReturn(Student student){
         Card card = null;
@@ -20,6 +21,6 @@ public class CardService {
     }
 
     public void deactivateCard(int student_id){
-        cardRepository.deactivateCard(student_id, CardStatus.DEACTIVATED.toString());
+        cardRepository3.deactivateCard(student_id, CardStatus.DEACTIVATED.toString());
     }
 }
